@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="bitsandpizza/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
+        <entry key="bitsandpizza/src/main/res/layout/activity_order.xml" value="0.23541666666666666" />
         <entry key="bitsandpizza/src/main/res/layout/toolbar_main.xml" value="0.24947916666666667" />
+        <entry key="bitsandpizza/src/main/res/menu/menu_main.xml" value="0.24947916666666667" />
+        <entry key="bitsandpizza/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26153846153846155" />
       </map>
     </option>
   </component>

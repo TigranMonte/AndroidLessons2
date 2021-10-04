@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLessons2">
         <activity
+            android:name=".OrderActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/create_order"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
