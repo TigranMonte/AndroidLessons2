@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     TextView tv;
     float x;
     float y;
+
     String sDown;
     String sUp;
     String sMove;
@@ -43,7 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 sUp = "Up = " + x + ", " + y;
                 break;
         }
+
         tv.setText(sDown + "\n" + sMove + "\n" + sUp);
         return true;
     }
+
 }
