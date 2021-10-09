@@ -10,3 +10,4 @@ rootProject.name = "Android lessons2"
 include ':app'
 include ':bitsandpizza'
 include ':p1021touch'
+include ':p1031multitouch'
