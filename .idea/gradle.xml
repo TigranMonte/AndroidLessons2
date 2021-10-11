@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/p1021touch" />
             <option value="$PROJECT_DIR$/p1031multitouch" />
             <option value="$PROJECT_DIR$/p1041fragmentlifecycle" />
+            <option value="$PROJECT_DIR$/p1051fragmentdynamic" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
