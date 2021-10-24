@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     Fragment frag1;
     Fragment frag2;
     Fragment frag;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         frag = frag1 = new Fragment1();
         frag2 = new Fragment2();
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -61,4 +59,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
 }
