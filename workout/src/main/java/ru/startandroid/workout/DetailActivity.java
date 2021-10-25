@@ -18,4 +18,5 @@ public class DetailActivity extends AppCompatActivity {
         int workoutId = (int) getIntent().getExtras().get(EXTRA_WORKOUT_ID);
         frag.setWorkoutId(workoutId);
     }
+
 }
