@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SimpleAlarm</string>
+    <string name="set_alarm">Установить будильник</string>
+    <string name="alarm">ALARM!!!</string>
+</resources>
