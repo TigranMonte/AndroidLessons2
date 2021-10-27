@@ -36,8 +36,11 @@
         <entry key="p1121dynamicactionbar/src/main/res/menu/main.xml" value="0.24947916666666667" />
         <entry key="p1131actionmode/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
         <entry key="p1131actionmode/src/main/res/menu/context.xml" value="0.24947916666666667" />
+        <entry key="p1151multiplescreen/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
+        <entry key="p1151multiplescreen/src/main/res/layout/details.xml" value="0.24947916666666667" />
         <entry key="simplealarm/src/main/res/layout/activity_alarm.xml" value="0.24947916666666667" />
         <entry key="simplealarm/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
+        <entry key="workout/src/main/res/layout-large/activity_main.xml" value="0.187109375" />
         <entry key="workout/src/main/res/layout/activity_detail.xml" value="0.24947916666666667" />
         <entry key="workout/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
         <entry key="workout/src/main/res/layout/fragment_workout_detail.xml" value="0.23541666666666666" />
