@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     @Override
     public void itemClicked(long id) {
         View fragmentContainer = findViewById(R.id.fragment_container);
@@ -25,12 +26,10 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.addToBackStack(null);
             ft.commit();
-
         } else {
             Intent intent = new Intent(this, DetailActivity.class);
             intent.putExtra(DetailActivity.EXTRA_WORKOUT_ID, (int) id);
             startActivity(intent);
         }
     }
-
 }
