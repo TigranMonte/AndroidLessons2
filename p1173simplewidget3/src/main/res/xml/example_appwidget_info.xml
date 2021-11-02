@@ -6,6 +6,7 @@
     android:minResizeWidth="40dp"
     android:resizeMode="vertical|horizontal"
     android:updatePeriodMillis="3600000"
-    android:widgetCategory="home_screen">
+    android:widgetCategory="home_screen"
+    android:configure="ru.startandroid.p1173simplewidget3.ExampleAppWidgetConfig">
 
 </appwidget-provider>
