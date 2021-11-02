@@ -1,4 +1,4 @@
-package ru.startandroid.p1161mngtasks1;
+package ru.startandroid.p1173simplewidget3;
 
 import org.junit.Test;
 
