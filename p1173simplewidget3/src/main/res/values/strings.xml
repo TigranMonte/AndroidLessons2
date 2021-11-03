@@ -3,4 +3,5 @@
     <string name="press_me">Press me now</string>
     <string name="button_text">Button text</string>
     <string name="confirm">Confirm</string>
+    <string name="my_widget">My Widget</string>
 </resources>
