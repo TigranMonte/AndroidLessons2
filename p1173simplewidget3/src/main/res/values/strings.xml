@@ -4,4 +4,6 @@
     <string name="button_text">Button text</string>
     <string name="confirm">Confirm</string>
     <string name="my_widget">My Widget</string>
+    <string name="empty">Empty</string>
+    <string name="item">Item</string>
 </resources>
