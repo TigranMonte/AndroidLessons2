@@ -1,13 +1,14 @@
 package ru.startandroid.p1173simplewidget3;
 
-import static ru.startandroid.p1173simplewidget3.ExampleAppWidgetProvider.EXTRA_ITEM_POSITION;
-
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 public class ExampleWidgetService extends RemoteViewsService {
 
@@ -31,12 +32,17 @@ public class ExampleWidgetService extends RemoteViewsService {
         @Override
         public void onCreate() {
             // connect to data source
-            SystemClock.sleep(3000);
+
         }
 
         @Override
         public void onDataSetChanged() {
-
+            // refresh data
+            Date date = new Date();
+            String timeFormatted = DateFormat.getTimeInstance(DateFormat.SHORT).format(date);
+            exampleData = new String[] {"Real Madrid\n" + timeFormatted, "Barcelona\n" + timeFormatted,
+                    "Atletico Madrid\n" + timeFormatted, "Sevilla\n" + timeFormatted};
+            SystemClock.sleep(3000);
         }
 
         @Override
@@ -56,7 +62,7 @@ public class ExampleWidgetService extends RemoteViewsService {
             views.setTextViewText(R.id.example_widget_item_text, exampleData[position]);
 
             Intent fillIntent = new Intent();
-            fillIntent.putExtra(EXTRA_ITEM_POSITION, position);
+            fillIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             views.setOnClickFillInIntent(R.id.example_widget_item_text, fillIntent);
 
             SystemClock.sleep(500);

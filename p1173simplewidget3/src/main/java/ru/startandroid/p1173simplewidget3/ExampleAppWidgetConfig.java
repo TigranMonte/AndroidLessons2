@@ -1,7 +1,6 @@
 package ru.startandroid.p1173simplewidget3;
 
-import static ru.startandroid.p1173simplewidget3.ExampleAppWidgetProvider.ACTION_TOAST;
-
+import static ru.startandroid.p1173simplewidget3.ExampleAppWidgetProvider.ACTION_REFRESH;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.PendingIntent;
@@ -59,7 +58,7 @@ public class ExampleAppWidgetConfig extends AppCompatActivity {
         serviceIntent.setData(Uri.parse(serviceIntent.toUri(Intent.URI_INTENT_SCHEME)));
 
         Intent clickIntent = new Intent(this, ExampleAppWidgetProvider.class);
-        clickIntent.setAction(ACTION_TOAST);
+        clickIntent.setAction(ACTION_REFRESH);
         PendingIntent clickPendingIntent = PendingIntent.getBroadcast(this, 0,
                 clickIntent, 0);
 
