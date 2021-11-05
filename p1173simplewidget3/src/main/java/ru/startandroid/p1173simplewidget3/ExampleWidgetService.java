@@ -1,5 +1,7 @@
 package ru.startandroid.p1173simplewidget3;
 
+import static ru.startandroid.p1173simplewidget3.ExampleAppWidgetProvider.EXTRA_ITEM_POSITION;
+
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
@@ -52,6 +54,11 @@ public class ExampleWidgetService extends RemoteViewsService {
         public RemoteViews getViewAt(int position) {
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.example_widget_item);
             views.setTextViewText(R.id.example_widget_item_text, exampleData[position]);
+
+            Intent fillIntent = new Intent();
+            fillIntent.putExtra(EXTRA_ITEM_POSITION, position);
+            views.setOnClickFillInIntent(R.id.example_widget_item_text, fillIntent);
+
             SystemClock.sleep(500);
             return views;
         }

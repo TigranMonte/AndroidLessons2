@@ -1,5 +1,7 @@
 package ru.startandroid.p1173simplewidget3;
 
+import static ru.startandroid.p1173simplewidget3.ExampleAppWidgetProvider.ACTION_TOAST;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.PendingIntent;
@@ -47,8 +49,8 @@ public class ExampleAppWidgetConfig extends AppCompatActivity {
     public void confirmConfiguration(View v) {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
 
-        Intent intent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        Intent buttonIntent = new Intent(this, MainActivity.class);
+        PendingIntent buttonPendingIntent = PendingIntent.getActivity(this, 0, buttonIntent, 0);
 
         String buttonText = editTextButton.getText().toString();
 
@@ -56,11 +58,17 @@ public class ExampleAppWidgetConfig extends AppCompatActivity {
         serviceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
         serviceIntent.setData(Uri.parse(serviceIntent.toUri(Intent.URI_INTENT_SCHEME)));
 
+        Intent clickIntent = new Intent(this, ExampleAppWidgetProvider.class);
+        clickIntent.setAction(ACTION_TOAST);
+        PendingIntent clickPendingIntent = PendingIntent.getBroadcast(this, 0,
+                clickIntent, 0);
+
         RemoteViews views = new RemoteViews(this.getPackageName(), R.layout.example_widget);
-        views.setOnClickPendingIntent(R.id.example_widget_button, pendingIntent);
+        views.setOnClickPendingIntent(R.id.example_widget_button, buttonPendingIntent);
         views.setCharSequence(R.id.example_widget_button, "setText", buttonText);
         views.setRemoteAdapter(R.id.example_widget_stack_view, serviceIntent);
         views.setEmptyView(R.id.example_widget_stack_view, R.id.example_widget_empty_view);
+        views.setPendingIntentTemplate(R.id.example_widget_stack_view, clickPendingIntent);
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
 

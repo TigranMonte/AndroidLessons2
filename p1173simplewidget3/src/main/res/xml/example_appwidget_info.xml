@@ -8,5 +8,4 @@
     android:resizeMode="vertical|horizontal"
     android:updatePeriodMillis="3600000"
     android:widgetCategory="home_screen"
-    android:autoAdvanceViewId="@id/example_widget_stack_view"
-    />
+    android:autoAdvanceViewId="@id/example_widget_stack_view"/>
