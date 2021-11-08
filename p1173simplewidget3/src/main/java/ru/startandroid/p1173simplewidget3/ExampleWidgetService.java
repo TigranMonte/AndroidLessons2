@@ -32,7 +32,6 @@ public class ExampleWidgetService extends RemoteViewsService {
         @Override
         public void onCreate() {
             // connect to data source
-
         }
 
         @Override
@@ -48,7 +47,6 @@ public class ExampleWidgetService extends RemoteViewsService {
         @Override
         public void onDestroy() {
             // close data source
-
         }
 
         @Override
