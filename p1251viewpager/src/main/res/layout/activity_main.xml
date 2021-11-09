@@ -9,11 +9,11 @@
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <androidx.viewpager.widget.PagerTitleStrip
-            android:id="@+id/pagerTitleStrip"
+        <androidx.viewpager.widget.PagerTabStrip
+            android:id="@+id/pagerTabStrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top">
-        </androidx.viewpager.widget.PagerTitleStrip>
+        </androidx.viewpager.widget.PagerTabStrip>
     </androidx.viewpager.widget.ViewPager>
 </RelativeLayout>
