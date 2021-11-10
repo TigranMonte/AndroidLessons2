@@ -52,6 +52,8 @@
         <entry key="p1173simplewidget3/src/main/res/xml/example_appwidget_info.xml" value="0.24947916666666667" />
         <entry key="p1251viewpager/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
         <entry key="p1251viewpager/src/main/res/layout/fragment.xml" value="0.24947916666666667" />
+        <entry key="p1252viewpager2/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
+        <entry key="p1252viewpager2/src/main/res/layout/fragment_main.xml" value="0.24947916666666667" />
         <entry key="simplealarm/src/main/res/layout/activity_alarm.xml" value="0.24947916666666667" />
         <entry key="simplealarm/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
         <entry key="workout/src/main/res/layout-large/activity_main.xml" value="0.187109375" />
