@@ -30,7 +30,6 @@ public class StopwatchFragment extends Fragment {
             wasRunning = savedInstanceState.getBoolean("wasRunning");
         }
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -38,14 +37,12 @@ public class StopwatchFragment extends Fragment {
         runTimer(layout);
         return layout;
     }
-
     @Override
     public void onPause() {
         super.onPause();
         wasRunning = running;
         running = false;
     }
-
     @Override
     public void onResume() {
         super.onResume();
@@ -53,7 +50,6 @@ public class StopwatchFragment extends Fragment {
             running = true;
         }
     }
-
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("seconds", seconds);
