@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,7 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Locale;
 
-public class StopwatchFragment extends Fragment {
+public class StopwatchFragment extends Fragment implements View.OnClickListener {
 
     // количество секунд на секундомере
     private int seconds = 0;
@@ -35,6 +36,12 @@ public class StopwatchFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_stopwatch, container, false);
         runTimer(layout);
+        Button startButton = (Button) layout.findViewById(R.id.start_button);
+        startButton.setOnClickListener(this);
+        Button stopButton = (Button) layout.findViewById(R.id.stop_button);
+        stopButton.setOnClickListener(this);
+        Button resetButton = (Button) layout.findViewById(R.id.reset_button);
+        resetButton.setOnClickListener(this);
         return layout;
     }
     @Override
@@ -57,15 +64,15 @@ public class StopwatchFragment extends Fragment {
         savedInstanceState.putBoolean("wasRunning", wasRunning);
     }
 
-    public void onClickStart(View view) {
+    private void onClickStart() {
         running = true;
     }
 
-    public void onClickStop(View view) {
+    private void onClickStop() {
         running = false;
     }
 
-    public void onClickReset(View view) {
+    private void onClickReset() {
         running = false;
         seconds = 0;
     }
@@ -88,6 +95,21 @@ public class StopwatchFragment extends Fragment {
                 handler.postDelayed(this, 1000);
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.start_button:
+                onClickStart();
+                break;
+            case R.id.stop_button:
+                onClickStop();
+                break;
+            case R.id.reset_button:
+                onClickReset();
+                break;
+        }
     }
 }
 
