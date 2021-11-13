@@ -18,6 +18,7 @@ public class StopwatchFragment extends Fragment implements View.OnClickListener 
 
     // количество секунд на секундомере
     private int seconds = 0;
+
     // секундомер работает?
     private boolean running;
     private boolean wasRunning;
@@ -96,7 +97,6 @@ public class StopwatchFragment extends Fragment implements View.OnClickListener 
             }
         });
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
