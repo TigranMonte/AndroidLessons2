@@ -3,4 +3,19 @@
     <string name="create_order">Create Order</string>
     <string name="create_order_title">Create Order</string>
     <string name="action_share">Share</string>
+    <string name="title_top">Top fragment</string>
+    <string-array name="pizzas">
+        <item>Diavolo</item>
+        <item>Peperoni</item>
+        <item>Margarita</item>
+    </string-array>
+    <string-array name="pasta">
+        <item>Spaghetti Bolognese</item>
+        <item>Lasagne</item>
+        <item>Makaroni po flotski</item>
+    </string-array>
+    <string-array name="stores">
+        <item>Anapa</item>
+        <item>Krasnodar</item>
+    </string-array>
 </resources>
