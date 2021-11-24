@@ -13,8 +13,7 @@
             android:name=".FeedbackActivity"
             android:exported="false" />
         <activity
-            android:name=".HelpActivity"
-            android:exported="false" />
+            android:name=".HelpActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
