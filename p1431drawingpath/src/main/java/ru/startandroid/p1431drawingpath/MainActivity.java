@@ -23,55 +23,51 @@ public class MainActivity extends AppCompatActivity {
 
         Paint p;
         Path path;
-        Point point1;
-        Point point21;
-        Point point22;
+        String text;
 
         public DrawView(Context context) {
             super(context);
             p = new Paint(Paint.ANTI_ALIAS_FLAG);
-            p.setStrokeWidth(3);
+            p.setStrokeWidth(1);
+            p.setTextSize(20);
 
             path = new Path();
-            point1 = new Point(200, 300);
-            point21 = new Point(500, 600);
-            point22 = new Point(900, 200);
+            text = "Draw the text, with origin at (x, y), using the specified paint";
         }
 
         @Override
         protected void onDraw(Canvas canvas) {
             canvas.drawARGB(80, 102, 204, 255);
 
-            // первая линия
-            p.setColor(Color.BLACK);
-            canvas.drawLine(100, 100, 600, 100, p);
-
-            // точка отклонения для первой линии
-            p.setStyle(Paint.Style.FILL);
-            p.setColor(Color.GREEN);
-            canvas.drawCircle(point1.x, point1.y, 10, p);
-
-            // квадратичная кривая
+            // черный
             path.reset();
-            path.moveTo(100, 100);
-            path.quadTo(point1.x, point1.y, 600, 100);
+            path.addCircle(200, 200, 100, Path.Direction.CW);
+            p.setColor(Color.BLACK);
+            canvas.drawTextOnPath(text, path, 0, 0, p);
+
+            path.reset();
+            path.addCircle(500, 200, 100, Path.Direction.CCW);
+
+            // синий
+            p.setStyle(Paint.Style.FILL);
+            p.setColor(Color.BLUE);
+            canvas.drawTextOnPath(text, path, 0, 0, p);
             p.setStyle(Paint.Style.STROKE);
             canvas.drawPath(path, p);
 
-            // вторая линия
-            p.setColor(Color.BLACK);
-            canvas.drawLine(400, 400, 1100, 400, p);
-
-            // точки отклонения для второй линии
+            // зеленый
+            path.offset(-300, 250);
             p.setStyle(Paint.Style.FILL);
-            p.setColor(Color.BLUE);
-            canvas.drawCircle(point21.x, point21.y, 10, p);
-            canvas.drawCircle(point22.x, point22.y, 10, p);
+            p.setColor(Color.GREEN);
+            canvas.drawTextOnPath(text, path, 100, 0, p);
+            p.setStyle(Paint.Style.STROKE);
+            canvas.drawPath(path, p);
 
-            // кубическая кривая
-            path.reset();
-            path.moveTo(400, 400);
-            path.cubicTo(point21.x, point21.y, point22.x, point22.y, 1100, 400);
+            // красный
+            path.offset(300, 0);
+            p.setStyle(Paint.Style.FILL);
+            p.setColor(Color.RED);
+            canvas.drawTextOnPath(text, path,0, 30, p);
             p.setStyle(Paint.Style.STROKE);
             canvas.drawPath(path, p);
         }
