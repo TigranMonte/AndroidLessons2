@@ -43,14 +43,15 @@ public class MainActivity extends AppCompatActivity {
             path.reset();
             path.addRect(300, 150, 450, 200, Path.Direction.CW);
             path.addRect(350, 100, 400, 250, Path.Direction.CW);
+            path.addCircle(375,125, 5, Path.Direction.CW);
 
             // рисуем path зеленым
             p.setColor(Color.GREEN);
             canvas.drawPath(path, p);
 
-            // настраиваем матрицу на изменение размера: в 2 раза по гориз. в 2.5 раза по верт. относительно точки (375, 100)
+            // настраиваем матрицу на поворот на 120 гр. относительно точки (600, 400)
             matrix.reset();
-            matrix.setScale(2f, 2.5f, 375, 100);
+            matrix.setRotate(120, 600, 400);
 
             // применяем матрицу к path
             path.transform(matrix);
@@ -59,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
             p.setColor(Color.BLUE);
             canvas.drawPath(path, p);
 
-            // рисуем точку относительно которой было выполнено преображение
+            // рисуем точку относительно которой был выполнен поворот
             p.setColor(Color.BLACK);
-            canvas.drawCircle(375, 100, 5, p);
+            canvas.drawCircle(600, 400, 5, p);
         }
     }
 }
