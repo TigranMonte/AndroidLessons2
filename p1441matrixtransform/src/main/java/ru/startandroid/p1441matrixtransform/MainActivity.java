@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
             p.setColor(Color.GREEN);
             canvas.drawPath(path, p);
 
-            // настраиваем матрицу на перемещение на 300 вправо и 200 вниз
+            // настраиваем матрицу на изменение размера: в 2 раза по гориз. в 2.5 раза по верт. относительно точки (375, 100)
             matrix.reset();
-            matrix.setTranslate(300, 200);
+            matrix.setScale(2f, 2.5f, 375, 100);
 
             // применяем матрицу к path
             path.transform(matrix);
@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
             // рисуем path синим
             p.setColor(Color.BLUE);
             canvas.drawPath(path, p);
+
+            // рисуем точку относительно которой было выполнено преображение
+            p.setColor(Color.BLACK);
+            canvas.drawCircle(375, 100, 5, p);
         }
     }
 }
