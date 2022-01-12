@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Point;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.view.View;
@@ -21,68 +22,57 @@ public class MainActivity extends AppCompatActivity {
     class DrawView extends View {
 
         Paint p;
-        RectF rectF;
         Path path;
-        Path path1;
+        Point point1;
+        Point point21;
+        Point point22;
 
         public DrawView(Context context) {
             super(context);
-            p = new Paint();
+            p = new Paint(Paint.ANTI_ALIAS_FLAG);
             p.setStrokeWidth(3);
-            p.setStyle(Paint.Style.STROKE);
 
-            rectF = new RectF(350, 100, 400, 150);
             path = new Path();
-            path1 = new Path();
+            point1 = new Point(200, 300);
+            point21 = new Point(500, 600);
+            point22 = new Point(900, 200);
         }
 
         @Override
         protected void onDraw(Canvas canvas) {
             canvas.drawARGB(80, 102, 204, 255);
 
-            //  очистка path
-            path.reset();
-
-            // угол
-            path.moveTo(100, 100);
-            path.lineTo(150, 200);
-            path.lineTo(50, 200);
-
-            // треугольник
-            path.moveTo(250, 100);
-            path.lineTo(300, 200);
-            path.lineTo(200, 200);
-            path.close();
-
-            // квадрат и круг
-            path.addRect(rectF, Path.Direction.CW);
-            path.addCircle(450, 150, 25, Path.Direction.CW);
-
-            // рисование path
+            // первая линия
             p.setColor(Color.BLACK);
+            canvas.drawLine(100, 100, 600, 100, p);
+
+            // точка отклонения для первой линии
+            p.setStyle(Paint.Style.FILL);
+            p.setColor(Color.GREEN);
+            canvas.drawCircle(point1.x, point1.y, 10, p);
+
+            // квадратичная кривая
+            path.reset();
+            path.moveTo(100, 100);
+            path.quadTo(point1.x, point1.y, 600, 100);
+            p.setStyle(Paint.Style.STROKE);
             canvas.drawPath(path, p);
 
-            // очистка path1
-            path1.reset();
+            // вторая линия
+            p.setColor(Color.BLACK);
+            canvas.drawLine(400, 400, 1100, 400, p);
 
-            // две пересекающиеся линии
-            path1.moveTo(50, 50);
-            path1.lineTo(500, 250);
-            path1.moveTo(500, 50);
-            path1.lineTo(50, 250);
-
-            // рисование path1
-            p.setColor(Color.GREEN);
-            canvas.drawPath(path1, p);
-
-            // добавление path1 к oath
-            path.addPath(path1);
-
-            // смещение
-            path.offset(500, 100);
-
-            // рисование path
+            // точки отклонения для второй линии
+            p.setStyle(Paint.Style.FILL);
             p.setColor(Color.BLUE);
+            canvas.drawCircle(point21.x, point21.y, 10, p);
+            canvas.drawCircle(point22.x, point22.y, 10, p);
+
+            // кубическая кривая
+            path.reset();
+            path.moveTo(400, 400);
+            path.cubicTo(point21.x, point21.y, point22.x, point22.y, 1100, 400);
+            p.setStyle(Paint.Style.STROKE);
             canvas.drawPath(path, p);
         }
     }
