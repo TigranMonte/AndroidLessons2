@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onDraw(Canvas canvas) {
             canvas.drawARGB(80, 102, 204, 255);
-
             p.setColor(Color.BLACK);
             canvas.drawPath(path, p);
             p.setColor(Color.GREEN);
