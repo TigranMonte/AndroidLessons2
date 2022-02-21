@@ -83,6 +83,9 @@
         <entry key="p1421drawingfigure/src/main/res/layout/activity_main.xml" value="0.22509057971014493" />
         <entry key="simplealarm/src/main/res/layout/activity_alarm.xml" value="0.24947916666666667" />
         <entry key="simplealarm/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
+        <entry key="todolist/src/main/res/layout/activity_main.xml" value="0.24864130434782608" />
+        <entry key="todolist/src/main/res/layout/activity_note_details.xml" value="0.24864130434782608" />
+        <entry key="todolist/src/main/res/layout/content_main.xml" value="0.24960917144346015" />
         <entry key="workout/src/main/res/layout-large/activity_main.xml" value="0.187109375" />
         <entry key="workout/src/main/res/layout/activity_detail.xml" value="0.24947916666666667" />
         <entry key="workout/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
