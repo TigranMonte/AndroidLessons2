@@ -9,13 +9,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import ru.tikodvlp.todolist.R;
+import ru.tikodvlp.todolist.details.NoteDetailsActivity;
+import ru.tikodvlp.todolist.model.Note;
 
 import android.view.Menu;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,19 +41,23 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
+        Adapter adapter = new Adapter();
+        recyclerView.setAdapter(adapter);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                NoteDetailsActivity.start(MainActivity.this, null);
             }
         });
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_details, menu);
-        return true;
+        MainViewModel mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mainViewModel.getNoteLiveData().observe(this, new Observer<List<Note>>() {
+            @Override
+            public void onChanged(List<Note> notes) {
+                adapter.setItems(notes);
+            }
+        });
     }
 }
