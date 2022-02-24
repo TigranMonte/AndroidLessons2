@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 NoteDetailsActivity.start(MainActivity.this, null);
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         MainViewModel mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         mainViewModel.getNoteLiveData().observe(this, new Observer<List<Note>>() {
+
             @Override
             public void onChanged(List<Note> notes) {
                 adapter.setItems(notes);

@@ -43,13 +43,11 @@ public class NoteDetailsActivity extends AppCompatActivity {
             note = new Note();
         }
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_details, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -71,7 +69,6 @@ public class NoteDetailsActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
     public static void start(Activity caller, Note note) {
         Intent intent = new Intent(caller, NoteDetailsActivity.class);
         if (note != null) {
