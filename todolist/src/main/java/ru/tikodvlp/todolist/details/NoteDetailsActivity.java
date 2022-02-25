@@ -19,7 +19,6 @@ import ru.tikodvlp.todolist.model.Note;
 public class NoteDetailsActivity extends AppCompatActivity {
 
     private static final String EXTRA_NOTE = "NoteDetailsActivity.EXTRA_NOTE";
-
     private Note note;
     private EditText editText;
 
@@ -69,6 +68,7 @@ public class NoteDetailsActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     public static void start(Activity caller, Note note) {
         Intent intent = new Intent(caller, NoteDetailsActivity.class);
         if (note != null) {
