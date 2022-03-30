@@ -12,4 +12,5 @@
     <string name="note_details_title">Новая Заметка</string>
     <string name="save">Сохранить</string>
     <string name="completed">Выполнение</string>
+    <string name="welcome">Welcome to your to do list</string>
 </resources>
