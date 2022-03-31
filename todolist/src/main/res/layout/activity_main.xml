@@ -31,6 +31,7 @@
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
         app:srcCompat="@drawable/ic_sharp_border_color_24"
-        android:backgroundTint="@color/toolbar_color"/>
+        android:backgroundTint="@color/toolbar_color"
+        app:tint="@color/white"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -2,6 +2,7 @@ package ru.tikodvlp.todolist.details;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,6 +33,7 @@ public class NoteDetailsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         setTitle(R.string.note_details_title);
+        setTitleColor(Color.WHITE);
 
         editText = findViewById(R.id.text);
 
